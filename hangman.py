@@ -13,8 +13,10 @@ def hangman(word):
     while  "".join(wordlis)!=word and lives!=0:
         print("Your Guess:")
         letter= input()
-        
-        if letter not in word:                                                    # if wrong guess
+        if letter not in alpha:
+            print("You have already choose that letter")
+            
+        elif letter not in word:                                                    # if wrong guess
             print("wrong guess")
             lives-=1
             print("lives left: ", lives)
@@ -45,6 +47,7 @@ def hangman(word):
     if lives==0:
         print("The Man Died")
         print("Better luck next time")
+        print(word)
     else:
         print("Congratulation")
         print("Perfect Guess")
@@ -56,4 +59,4 @@ ch = f.read()
 lisofwords = list(ch.split("\n"))
 f.close()
 word= random.choice(lisofwords)
-hangman(word)
+hangman(word)   
