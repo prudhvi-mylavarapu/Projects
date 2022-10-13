@@ -47,7 +47,7 @@ def hangman(word):
     if lives==0:
         print("The Man Died")
         print("Better luck next time")
-        print(word)
+        print(f"The word is {word}")
     else:
         print("Congratulation")
         print("Perfect Guess")
